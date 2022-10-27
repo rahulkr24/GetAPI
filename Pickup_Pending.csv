@@ -1,0 +1,1 @@
+id,status,created_at,updated_at,reservation_type,reservation_awbno,reservation_status,location_id,location_name,pod_id,door_number,created_by_phone,created_by_name,drop_otp,drop_by_phone,drop_by_name,drop_expiry_at,pickup_otp,pickup_by_phone,pick_up_by_name,pick_expiry_at,rto_otp,rto_by_phone,rto_by_name,rto_expiry_at,pod_name,spot_at_location,pick_up_by_user_details

@@ -1,0 +1,5 @@
+id,pod_id,reservation_status,door_number,rto_otp
+id,pod_id,reservation_status,door_number,drop_otp,pickup_otp
+PD-cb6809b8effe064,1001554,DropPending,7,206760,242199
+id,pod_id,reservation_status,door_number,drop_otp,pickup_otp
+PD-84645ffac185c10,PickupPending,1001554,1,707888
