@@ -2,13 +2,13 @@ from log_utils import *
 import requests
 import json
 
-PODAPI_SERVER_ADDRESS = str("https://staging.qikpod.com:8989/")
+PODAPI_SERVER_ADDRESS = str("https://podapi.qikpod.com:8989/")
 Log.debug("*** LOADING MODULE = [APIUTILS] ***")
 
 Log.debug("*** LOADING MODULE = [APIUTILS] ***")
 
 
-def call_rest_api(request_type, endpoint, data=None, params=None, files=None, no_token=False, token=None):
+def call_rest_api(request_type, endpoint, data=None, params=None, files=None, no_token=False):
     Log.debug("call_rest_api: params")
     Log.debug("\trequestpoddiaginfo_type=[" + str(request_type) + "]")
     Log.debug("\tendpoint=[" + str(endpoint) + "]")
@@ -19,12 +19,9 @@ def call_rest_api(request_type, endpoint, data=None, params=None, files=None, no
     REQUESTS_TIMEOUT = 5
 
     # Added
-    if token is not None:
-        STR_API_ACCESS_TOKEN = str(token)
-    else:
-        STR_API_ACCESS_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoidG9rZW4gZ2VuZXJhdGVkIGZvciB0ZXN0aW5nIHB1cnBvc2UiLCJleHAiOjE2NzAzOTQyNzR9.chk_l90pZlnDsPu8xP0tV7JRSLAMkb0gzHy487Uce2Q'
-
+    STR_API_ACCESS_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoidG9rZW4gZ2VuZXJhdGVkIGZvciB0ZXN0aW5nIHB1cnBvc2UiLCJleHAiOjE2NzAzOTQyNzR9.chk_l90pZlnDsPu8xP0tV7JRSLAMkb0gzHy487Uce2Q'
     api_access_token = STR_API_ACCESS_TOKEN
+
     access_token = api_access_token
     headers_dict = {'Content-Type': 'application/json', 'Authorization': 'Bearer {}'.format(access_token)}
     # ***
@@ -34,6 +31,9 @@ def call_rest_api(request_type, endpoint, data=None, params=None, files=None, no
         if request_type == "get":
             if no_token == True:
                 api_response = requests.get(url, params=params, verify=False, timeout=REQUESTS_TIMEOUT)
+            elif no_token == "status":
+                api_response = requests.get(url, params=params, verify=False, timeout=REQUESTS_TIMEOUT).text
+                return api_response
             else:
                 api_response = requests.get(url, params=params, verify=False, timeout=REQUESTS_TIMEOUT, headers=headers_dict)
         elif request_type == "put":

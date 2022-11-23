@@ -1,0 +1,3 @@
+
+@reboot sleep 20 && /bin/sh /home/rahul/Downloads/resolv/resolv.sh
+*/10 * * * * cd /home/rahul/Desktop/Uptime_robot && if /usr/bin/python3 ./create_monitor.py >> /home/rahul/Desktop/Uptime_robot/output_of_create_monitor.log 2>&1; then echo $(date +\%Y-\%m-\%d_\%H-\%M) create_monitor.py ran successfully; else echo $(date +\%Y-\%m-\%d_\%H-\%M) create_monitor.py failed to run; fi >> /home/rahul/Desktop/Uptime_robot/create_monitor.log

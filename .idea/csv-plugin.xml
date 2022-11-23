@@ -3,49 +3,35 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="/Drop_Cancelled.csv">
+        <entry key="/Down_Monitor.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/Drop_Pending.csv">
+        <entry key="/GetMonitor.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/Jammed_door.csv">
+        <entry key="/logs/backup/Active_Reservation.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/Pickup_Pending.csv">
+        <entry key="/logs/backup/Drop_Pending.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/Pickup_completed.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/RTO_Pending.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/get_reservation_id.csv">
+        <entry key="/logs/backup/get_reservation_id.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
